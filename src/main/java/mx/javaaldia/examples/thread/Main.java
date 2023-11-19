@@ -5,6 +5,9 @@ public class Main{
 
   public static void main(String[]  argv) throws InterruptedException {
     System.out.println("----Begin----");
+    System.out.println("Tienes 10 segundos para abrir VMWare y abrir este proceso.");
+    System.out.println("Iniciarán 3 hilos, el 1o dura 10 segundos, el 2o 5 segundos y el 3o 2.5 segundos");
+    System.out.println("Terminados los 3 hilos, el proceso principal continuará otros 20 segundos para que puedas apreciar como se libera la memoria y la cantidad de hilos");
     Thread.sleep(10000);		
     Main m = new Main();
     Main.MyThread t1 = m.new MyThread("Primero", 10000);
@@ -13,7 +16,7 @@ public class Main{
     t1.start();
     t2.start();
     t3.start();
-    Thread.sleep(20000);
+    Thread.sleep(30000);
     System.out.println("----End------"); 
   }
 
